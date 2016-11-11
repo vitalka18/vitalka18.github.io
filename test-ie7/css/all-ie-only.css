@@ -1,0 +1,28 @@
+.form_tab-search .form-field {
+  width: 201px;
+  height: 15px;
+  padding: 3px 3px 2px;
+  box-sizing: content-box;
+}
+
+.c-box {
+	margin-right: 4px;
+}
+
+.c-box 	input {
+	position: relative;
+	top: -1px;
+	width: 12px;
+	margin: 0 2px 0 0;
+	clip: none;
+	vertical-align: middle;
+	visibility: visible;;
+}
+
+.c-box__custom {
+	display: none;
+}
+
+.form_tab-search .btn {
+	width: 253px;
+}
