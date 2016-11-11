@@ -5,6 +5,13 @@
   box-sizing: content-box;
 }
 
+.form_tab-search .form-select {
+	filter:
+	  progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=0,color=#FF0000)
+	  progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=0,color=#FF0000)
+	  progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=-1,color=#FF0000)
+	  progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=1,color=#FF0000);
+}
 .c-box {
 	margin-right: 4px;
 }
@@ -24,5 +31,5 @@
 }
 
 .form_tab-search .btn {
-	width: 253px;
+	width: 255px;
 }
