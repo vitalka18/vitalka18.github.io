@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Document</title>
+
+  <style>
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      text-align: center;
+      padding: 2px !important;
+      font-size: 12px;
+    }
+
+    tr th:first-child {
+      background: #e9ecef;
+      min-width: 60px;
+      max-width: 60px;
+      text-align: left;
+    }
+
+    .form-control {
+      max-width: 100%;
+      width: 100% !important;
+      margin-bottom: 15px;
+    }
+
+    .form-inline-double .form-group {
+      width: 66%;
+    }
+
+    .form-inline-double .form-group:last-child {
+      width: 32%;
+      margin-left: 2%;
+    }
+
+    .embed-responsive {
+      border: 2px solid grey;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="f1">f<sub>1</sub>(x<sub>1</sub>,x<sub>2</sub>)</label>
+          <div class="form-inline form-inline-double">
+            <div class="form-group">
+              <input class="form-control" id="f1" type="text" value="2*x-y^2-3*y+8">
+            </div>
+            <div class="form-group">
+              <input class="form-control" id="i1" type="text" value="0,4">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="f2">f<sub>2</sub>(x<sub>1</sub>,x<sub>2</sub>)</label>
+          <div class="form-inline form-inline-double">
+            <div class="form-group">
+              <input class="form-control" id="f2" type="text" value="x^2+2*x-y^2-3.8">
+            </div>
+            <div class="form-group">
+              <input class="form-control" id="i2" type="text" value="0,4">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left">
+        <button id="calc" class="btn btn-success">Порахувати</button>
+        <button id="reset" class="btn btn-warning">Очистити</button>
+      </div>
+      <div id="first">
+        <h4 class="text-center">f<sub>1</sub>(x<sub>1</sub>,x<sub>2</sub>)</h4>
+
+      </div>
+      <hr>
+      <div id="second">
+        <h4 class="text-center">f<sub>2</sub>(x<sub>1</sub>,x<sub>2</sub>)</h4>
+      </div>
+      <hr>
+      <div id="res">
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.desmos.com/calculator"></iframe>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="iframe1" name="iframe1" class="embed-responsive-item" src="https://www.desmos.com/calculator"></iframe>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.desmos.com/calculator"></iframe>
+      </div>
+    </div>
+  </div>
+  <script src="jquery.js"></script>
+
+  <script src="algebrate.js"></script>
+  <script src="mathjs.js"></script>
+  <script src="max.js"></script>
+</body>
+
+</html>
