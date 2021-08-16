@@ -6,31 +6,31 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "/assets/android-icon-36x36.png",
+      "src": "/assets/images/android-icon-36x36-1cf2de46f88d08abbbdac44132b92613.png",
       "sizes": "36x36",
       "type": "image/png",
       "density": "0.75"
     },
     {
-      "src": "/assets/android-icon-48x48.png",
+      "src": "/assets/images/android-icon-48x48-d7f42c81b79ef9465ca37d79ca1981d6.png",
       "sizes": "48x48",
       "type": "image/png",
       "density": "1.0"
     },
     {
-      "src": "/assets/android-icon-72x72.png",
+      "src": "/assets/images/android-icon-72x72-1d55aa57c15cf7f7cc68b7445742475d.png",
       "sizes": "72x72",
       "type": "image/png",
       "density": "0.75"
     },
     {
-      "src": "/assets/android-icon-96x96.png",
+      "src": "/assets/images/android-icon-96x96-0010cef476c0625a845dc6c727bfefd4.png",
       "sizes": "96x96",
       "type": "image/png",
       "density": "1.0"
     },
     {
-      "src": "/assets/android-icon-144x144.png",
+      "src": "/assets/images/android-icon-144x144-5533beb4d12597dbf31526b2e1fcecec.png",
       "sizes": "144x144",
       "type": "image/png",
       "density": "1.0"
