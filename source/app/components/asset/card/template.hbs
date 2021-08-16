@@ -1,0 +1,127 @@
+<article
+  class='asset-card
+    {{if this.focused 'asset-card_focused'}}
+    {{if this.hovered 'asset-card_hovered'}}'
+  tabindex='0'
+  {{on-parent-focus this.onFocus}}
+  {{on-parent-blur this.onFocusOut}}
+  {{on 'mouseover' this.onMouseEnter}}
+  {{on 'mouseout' this.onMouseLeave}}
+>
+  <figure class='asset-card__preview'>
+    {{#if (and @asset.previewImage (not this.canNotLoadImage))}}
+      <img
+        class='asset-card__image'
+        src={{@asset.previewImage}}
+        alt={{if this.canNotLoadImage 'Can not load image' @asset.title}}
+        {{on 'error' this.onImageLoadError}}
+      />
+    {{else}}
+      <img
+        class='asset-card__fallback'
+        src={{this.fallbackImage}}
+        alt='No preview'
+      />
+    {{/if}}
+
+    <div class='asset-card__active'>
+      <div class='asset-card__active-top'>
+        <button
+          class='asset-card__favorite
+            {{if @asset.selected 'asset-card_selected'}}'
+          type='button'
+          {{on 'click' this.onFavorite}}
+        >
+          <Ui::Icon @name={{if @asset.selected 'ideas-2' 'ideas'}} />
+        </button>
+      </div>
+
+      <div class='asset-card__active-bottom'>
+        <div class='asset-card__total-count'>
+          <h4>{{@asset.usedTotalCount}}</h4>
+          <p>Used (total)</p>
+        </div>
+
+        <div class='asset-card__action'>
+          {{#if this.hasUseButton}}
+            <button
+              class='btn btn-primary'
+              type='button'
+              {{on 'click' this.onSelect}}
+            >
+              USE
+            </button>
+          {{/if}}
+
+          {{#if this.hasDownloadLink}}
+            <a
+              class='btn btn-outline'
+              href={{@asset.originalFileSrc}}
+              download='Pdf Document'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              DOWNLOAD
+            </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <div class='asset-card__body'>
+    <h3 class='asset-card__title'>
+      <span class='asset-card__icon'>
+        <Ui::Icon @name={{@asset.typeName}} />
+      </span>
+
+      {{@asset.title}}
+    </h3>
+
+    {{#if @asset.tags.length}}
+      <div class='asset-card__tags'>
+        <Ui::Dropdown @hasBody={{this.additionalTags.length}}>
+          <:trigger>
+            <Ui::Tag>{{@asset.tags.firstObject}}</Ui::Tag>
+
+            {{#if (gt @asset.tags.length 1)}}
+              <button class='asset-card__more-tag' type='button'>
+                +{{this.additionalTags.length}}
+              </button>
+            {{/if}}
+          </:trigger>
+
+          <:content>
+            {{#each this.additionalTags as |tag|}}
+              <Ui::Tag>{{tag}}</Ui::Tag>
+            {{/each}}
+          </:content>
+        </Ui::Dropdown>
+      </div>
+    {{/if}}
+
+    <div class='asset-card__desc'>
+      <p>
+        {{@asset.description}}
+      </p>
+    </div>
+  </div>
+
+  {{#if this.hasLink}}
+    <a
+      href={{@asset.externalLink.href}}
+      target='_blank'
+      class='link'
+      rel='noopener noreferrer'
+    >
+      <div class='link__icon'>
+        <Ui::Icon @name='link' />
+      </div>
+
+      <div class='link__desc'>
+        <h6>{{@asset.externalLink.title}}</h6>
+        <p>{{@asset.externalLink.href}}</p>
+      </div>
+    </a>
+  {{/if}}
+</article>

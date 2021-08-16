@@ -1,0 +1,244 @@
+@import '../../variables';
+@import '../../mixins';
+
+.asset-card {
+  display: flex;
+  flex-flow: column nowrap;
+  height: to-rem(280);
+  background-color: var(--white);
+  border-radius: $border-radius;
+
+  &.asset-card_focused,
+  &.asset-card_hovered {
+    .asset-card__active {
+      opacity: 1;
+    }
+
+    .asset-card__tags {
+      display: flex;
+      height: auto;
+      visibility: visible;
+    }
+
+    .link {
+      display: block;
+      height: auto;
+      visibility: visible;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    flex-grow: 1;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--gray);
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__fallback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__body {
+    padding: to-rem(12) 0 to-rem(8);
+    font-size: to-rem(13);
+  }
+
+  &__title {
+    margin: 0;
+    padding: to-rem(4) to-rem(16);
+    font-size: to-rem(13);
+    @include ellipsis;
+  }
+
+  &__icon {
+    position: relative;
+    top: to-rem(2);
+    display: inline-block;
+    margin-right: to-rem(3);
+    font-size: to-rem(16);
+  }
+
+  &__active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: to-rem(13) to-rem(16);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: $border-radius $border-radius 0 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &__active-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__active-bottom {
+    color: var(--white);
+
+    h4 {
+      margin: 0;
+      overflow: hidden;
+      font-weight: 900;
+      font-size: to-rem(16);
+      line-height: 1;
+      @include ellipsis;
+    }
+
+    p {
+      margin: 0;
+      font-size: to-rem(10);
+      line-height: to-rem(14);
+      @include ellipsis;
+    }
+  }
+
+  &__total-count {
+    margin-bottom: to-rem(8);
+  }
+
+  &__action {
+    .btn {
+      width: 100%;
+    }
+  }
+
+  &__tags {
+    position: relative;
+    display: none;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 0;
+    padding: 0 to-rem(16);
+    visibility: hidden;
+    transition: all 0.3s;
+
+    .dropdown {
+      width: 100%;
+    }
+  }
+
+  &__tag {
+    .tag {
+      max-width: 80%;
+    }
+  }
+
+  &__more-tag {
+    padding: to-rem(2) to-rem(4);
+    font-size: to-rem(10);
+    line-height: to-rem(14);
+    background: none;
+    border: 1px solid var(--gray-light);
+    border-radius: $border-radius;
+    @include ellipsis;
+  }
+
+  &__desc {
+    position: relative;
+    display: block;
+    padding: to-rem(4) to-rem(16);
+
+    p {
+      margin: 0;
+      @include ellipsis;
+    }
+  }
+
+  &__favorite {
+    padding: 0;
+    color: var(--white);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: var(--secondary);
+    }
+
+    .icon {
+      font-size: to-rem(20);
+    }
+  }
+
+  &_selected {
+    color: var(--secondary);
+  }
+
+  .link {
+    display: none;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 0;
+    padding: to-rem(10) to-rem(16) to-rem(16);
+    overflow: hidden;
+    color: var(--base-body-color);
+    text-decoration: none;
+    border-top: 1px solid var(--gray-light);
+    border-radius: 0 0 $border-radius $border-radius;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--gray-light);
+    }
+
+    .icon {
+      position: relative;
+      display: block;
+      width: to-rem(24);
+      height: to-rem(24);
+      background-color: var(--gray);
+      border-radius: $border-radius;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    h6 {
+      margin: 0;
+      font-size: to-rem(10);
+      @include ellipsis;
+    }
+
+    p {
+      margin: 0;
+      color: #999;
+      font-size: to-rem(10);
+      @include ellipsis;
+    }
+
+    &__icon {
+      float: left;
+    }
+
+    &__desc {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-left: to-rem(32);
+    }
+  }
+}

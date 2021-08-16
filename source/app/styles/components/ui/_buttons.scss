@@ -1,0 +1,44 @@
+@import '../../variables';
+@import '../../mixins';
+
+.btn {
+  display: inline-block;
+  padding: to-rem(9) to-rem(16);
+  color: #fff;
+  font-weight: 700;
+  font-size: to-rem(10);
+  line-height: to-rem(14);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: #4797ff;
+  border-color: #4797ff;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#4797ff, 20%);
+    border-color: darken(#4797ff, 20%);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: darken(#fff, 10%);
+  }
+}

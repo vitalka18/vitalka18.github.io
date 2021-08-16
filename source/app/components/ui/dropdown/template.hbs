@@ -1,0 +1,14 @@
+<div
+  class='dropdown {{if this.opened 'dropdown_opened'}}'
+  {{on 'mouseout' this.onLeave}}
+>
+  <div class='dropdown__trigger' {{on 'mouseover' this.onEnter}}>
+    {{yield to='trigger'}}
+  </div>
+
+  {{#if @hasBody}}
+    <div class='dropdown__body'>
+      {{yield to='content'}}
+    </div>
+  {{/if}}
+</div>

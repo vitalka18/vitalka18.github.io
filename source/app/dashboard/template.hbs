@@ -1,0 +1,27 @@
+{{page-title 'Dashboard'}}
+
+<main class='dashboard'>
+  <aside class='dashboard__left-bar'>
+    <Ui::Panel @title='Asset type'>
+      <Asset::Filter @filtered={{this.onFilterAssets}} />
+    </Ui::Panel>
+  </aside>
+
+  <div class='dashboard__content'>
+    <Asset::Sort
+      @sortBy={{this.sortBy}}
+      @sortDir={{this.sortDir}}
+      @sort={{this.sortByProperties}}
+      @sorted={{this.onSortAssets}}
+    />
+
+    <Asset::List @assets={{this.assets}} @selectAsset={{this.onUseAsset}} />
+
+    <Ui::Pagination
+      @page={{this.page}}
+      @perPage={{this.perPage}}
+      @totalCount={{@model.length}}
+      @loadMore={{this.onLoadMore}}
+    />
+  </div>
+</main>

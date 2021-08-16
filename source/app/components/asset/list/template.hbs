@@ -1,0 +1,7 @@
+<div class='assets-list'>
+  {{#each @assets as |asset|}}
+    <div class='assets-list__item'>
+      <Asset::Card @asset={{asset}} @selected={{this.onSelectAsset}} />
+    </div>
+  {{/each}}
+</div>

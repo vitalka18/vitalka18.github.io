@@ -1,0 +1,26 @@
+<aside class='sort'>
+  <Ui::Panel>
+    {{#each @sort as |item|}}
+      <LinkTo
+        class='sort-link
+          {{if (eq @sortBy item.property) 'active'}}
+          {{if this.isAsc 'sort__desc' 'sort__asc'}}'
+        @route='dashboard'
+        @query={{hash
+          sort-by=item.property
+          sort-dir=(if this.isAsc 'desc' 'asc')
+        }}
+        {{on
+          'click'
+          (fn this.onSort item.property (if this.isAsc 'desc' 'asc'))
+        }}
+      >
+        {{item.title}}
+
+        {{#if (eq @sortBy item.property)}}
+          {{if this.isAsc '↓' '↑'}}
+        {{/if}}
+      </LinkTo>
+    {{/each}}
+  </Ui::Panel>
+</aside>

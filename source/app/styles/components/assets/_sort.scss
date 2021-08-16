@@ -1,0 +1,15 @@
+@import '../../mixins';
+
+.sort {
+  margin-bottom: to-rem(20);
+
+  .sort-link {
+    display: inline-block;
+    margin-right: to-rem(15);
+
+    &.active {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+  }
+}

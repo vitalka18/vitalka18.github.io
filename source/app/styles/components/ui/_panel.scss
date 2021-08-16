@@ -1,0 +1,21 @@
+@import '../../variables';
+@import '../../mixins';
+
+.panel {
+  padding: to-rem(20) to-rem(16);
+  background: var(--white);
+  border-radius: $border-radius;
+
+  &__title {
+    margin: 0 0 to-rem(16);
+    font-weight: 900;
+    font-size: to-rem(13);
+    line-height: to-rem(18);
+  }
+
+  &__content {
+    & > div:not(:last-child) {
+      margin-bottom: to-rem(10);
+    }
+  }
+}

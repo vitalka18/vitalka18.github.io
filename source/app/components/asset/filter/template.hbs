@@ -1,0 +1,9 @@
+{{#each this.filterTypes as |item index |}}
+  <Ui::Checkbox
+    @changed={{fn this.onFilterAssets item}}
+    @checked={{item.checked}}
+  >
+    <Ui::Icon @name={{item.icon}} />
+    {{item.title}}
+  </Ui::Checkbox>
+{{/each}}

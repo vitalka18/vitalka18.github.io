@@ -1,0 +1,64 @@
+body {
+  color: var(--base-body-color);
+  font-size: var(--base-font-size);
+  font-family: 'Lato', sans-serif;
+  line-height: var(--base-body-line-height);
+  background-color: var(--base-body-bg);
+
+  // Set up media query sort
+  @media (min-width: map-get($breakpoints, 'xs')) {
+    font-size: var(--base-font-size);
+  }
+
+  @media (min-width: map-get($breakpoints, 'sm')) {
+    font-size: var(--base-font-size);
+  }
+
+  @media (min-width: map-get($breakpoints, 'md')) {
+    font-size: var(--base-font-size);
+  }
+
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    font-size: var(--base-font-size);
+  }
+
+  @media (min-width: map-get($breakpoints, 'xl')) {
+    font-size: var(--base-font-size);
+  }
+
+  @media (min-width: map-get($breakpoints, 'xxl')) {
+    font-size: var(--base-font-size);
+  }
+}
+
+.full-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(
+    100vh - var(--container-padding-horizontal) -
+    var(--container-padding-horizontal)
+  );
+}
+
+.base-content {
+  padding: 1rem 2rem;
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

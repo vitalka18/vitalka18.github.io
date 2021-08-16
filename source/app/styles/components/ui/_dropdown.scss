@@ -1,0 +1,42 @@
+@import '../../variables';
+@import '../../mixins';
+
+.dropdown {
+  position: relative;
+  padding: to-rem(5) 0;
+
+  &_opened {
+    .dropdown__body {
+      z-index: 1;
+      width: 100%;
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__trigger {
+    & > * {
+      vertical-align: middle;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    bottom: 95%;
+    left: to-rem(-5);
+    z-index: -1000;
+    padding: to-rem(10);
+    background: var(--white);
+    border-radius: $border-radius;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    transform: translateY(to-rem(10));
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.4s;
+
+    .tag {
+      margin: to-rem(2.5);
+    }
+  }
+}

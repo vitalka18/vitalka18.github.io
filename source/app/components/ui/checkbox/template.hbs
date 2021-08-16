@@ -1,0 +1,13 @@
+<div class='checkbox'>
+  <Input
+    class='checkbox__input'
+    @type='checkbox'
+    id={{this.id}}
+    @checked={{@checked}}
+    {{on "change" this.onChange}}
+  />
+
+  <label class='checkbox__label' for={{this.id}}>
+    {{yield}}
+  </label>
+</div>

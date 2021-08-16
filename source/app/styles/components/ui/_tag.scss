@@ -1,0 +1,13 @@
+@import '../../variables';
+@import '../../mixins';
+
+.tag {
+  display: inline-block;
+  padding: to-rem(2) to-rem(4);
+  font-size: to-rem(10);
+  line-height: to-rem(14);
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-light);
+  border-radius: $border-radius;
+  @include ellipsis;
+}

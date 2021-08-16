@@ -1,0 +1,11 @@
+<div class='text-center'>
+  {{#if this.isLoadMoreVisible}}
+    <LinkTo
+      @route='dashboard'
+      @query={{hash page=this.pages}}
+      {{on 'click' this.onLoadMore}}
+    >
+      Load more
+    </LinkTo>
+  {{/if}}
+</div>

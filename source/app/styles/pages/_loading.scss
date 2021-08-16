@@ -1,0 +1,29 @@
+.page-loader {
+  text-align: center;
+}
+
+.page-loader__title {
+  font-size: 1.5rem;
+}
+
+.page-loader::before {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin: 0.75rem auto;
+  border: 0.5625rem solid var(--active);
+  border-color: var(--active) transparent var(--active) transparent;
+  border-radius: 50%;
+  animation: page-loader 1.2s linear infinite;
+  content: ' ';
+}
+
+@keyframes page-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
