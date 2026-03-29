@@ -68,7 +68,7 @@
     "qunit": "^2.15.0",
     "qunit-dom": "^1.6.0",
     "sass": "^1.37.5",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^22.0.0",
